@@ -1,27 +1,23 @@
+var controls=document.querySelector(".controls");
+var matrix=document.querySelector(".matrix");
+
 function randomNum(maxInt){
     return Math.floor(Math.random()*maxInt);
 }
-class textbox{
-    inputs = window.document.querySelector(".inputs");
-
-constructor(name){
-    
-    var textbox=document.createElement("input");
-    textbox.placeholder=name;
-    textbox.id=toString(randomNum(1000));
-    var submitButton=new button(textbox.id);
-
-
-    inputs.appendChild(textbox);
-    this.inputs.appendChild(submitButton);
-    return textbox;
-}
-
-}
 
 
 
 
-var input = new textbox();
-submitButton = document.createElement("button");
-submitButton.addEventListener("click", );
+var rotate90Button=document.createElement("button");
+rotate90Button.textContent="rotate clockwise";
+rotate90Button.addEventListener("click", )
+
+var rotate90ButtonCCW=document.createElement("button");
+rotate90ButtonCCW.textContent="rotate counter clockwise";
+rotate90ButtonCCW.addEventListener("click", )
+
+var createMatrixButton=document.querySelector(".submit");
+createMatrixButton.addEventListener("click", ()=>{
+    document.querySelector(".start").
+})
+inputs.appendChild(rotate90Button);
