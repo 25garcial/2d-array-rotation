@@ -39,7 +39,7 @@ rotate90ButtonCCW.addEventListener("click");
 
 var createMatrixButton=document.querySelector(".submit");
 createMatrixButton.addEventListener("click", ()=>{
-    
+    alert();
     controls.setAttribute("display", "inital");
     var matrixHeight=Number(document.querySelector(".height").textContent);
     var matrixWidth=Number(document.querySelector(".width").textContent);
