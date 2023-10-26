@@ -20,7 +20,13 @@ function createMatrix(height, width){
     return result;
 }
 
+function rotate90(){
 
+}
+
+function rotate90ccw(){
+
+}
 
 var rotate90Button=document.querySelector("rotate90cc");
 rotate90Button.textContent="rotate clockwise";
