@@ -22,13 +22,13 @@ function createMatrix(height, width){
 
 
 
-var rotate90Button=document.createElement("button");
+var rotate90Button=document.querySelector("rotate90cc");
 rotate90Button.textContent="rotate clockwise";
-rotate90Button.addEventListener("click", )
+rotate90Button.addEventListener("click");
 
-var rotate90ButtonCCW=document.createElement("button");
+var rotate90ButtonCCW=document.querySelector("rotate90ccw");
 rotate90ButtonCCW.textContent="rotate counter clockwise";
-rotate90ButtonCCW.addEventListener("click", )
+rotate90ButtonCCW.addEventListener("click");
 
 var createMatrixButton=document.querySelector(".submit");
 createMatrixButton.addEventListener("click", ()=>{
