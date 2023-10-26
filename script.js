@@ -5,6 +5,9 @@ function randomNum(maxInt){
     return Math.floor(Math.random()*maxInt);
 }
 
+function createMatrix(width, height){
+
+}
 
 
 
@@ -18,6 +21,12 @@ rotate90ButtonCCW.addEventListener("click", )
 
 var createMatrixButton=document.querySelector(".submit");
 createMatrixButton.addEventListener("click", ()=>{
-    document.querySelector(".start").
+    var matrixHeight=document.querySelector(".height").textContent;
+    var matrixWidth=document.querySelector(".width").textContent;
+
+    document.querySelector(".start").setAttribute("display", "hidden");
+    matrix.innerHTML=createMatrix(matrixWidth, matrixWidth);
 })
-inputs.appendChild(rotate90Button);
+
+controls.appendChild(rotate90Button);
+controls.appendChild(rotate90ButtonCCW);
