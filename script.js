@@ -18,7 +18,6 @@ function createMatrix(height, width) {
     return result;
 }
 
-alert("script ran 2");
 
 // function rotate90(){
 
@@ -30,7 +29,6 @@ alert("script ran 2");
 
 function main() {
 
-    alert("script ran 4");
 
     var rotate90Button = document.querySelector(".rotate90cc");
     rotate90Button.textContent = "rotate clockwise";
@@ -41,27 +39,24 @@ function main() {
     //rotate90ButtonCCW.addEventListener("click");
 
 
-    alert("script ran 5");
+    
 
     var createMatrixButton = document.querySelector(".submit");
 
 
     createMatrixButton.addEventListener("click", () => {
-        alert("clicked");
-        controls.setAttribute("display", "inital");
-        var matrixHeight = parseInt(document.querySelector(".height").textContent);
-        var matrixWidth = parseInt(document.querySelector(".width").textContent);
+    
+        controls.setAttribute("visibility", "visible");
+        alert(document.querySelector(".height").textContent);
+        var matrixHeight = Number(document.querySelector(".height").value);
+        var matrixWidth = Number(document.querySelector(".width").value);
 
         matrix.innerHTML = createMatrix(matrixHeight, matrixWidth);
         alert(`Created ${matrixWidth} by ${matrixHeight} matrix`);
-        document.querySelector(".start").setAttribute("display", "none");
+        document.querySelector(".start").setAttribute("visibility", "hidden");
 
-        alert("script ran 7");
     });
-
-    alert("script ran 6");
 }
 
-alert("script ran 3");
 main();
-alert("script ran 5");
+alert("script finished");
