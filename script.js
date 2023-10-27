@@ -48,8 +48,8 @@ function main() {
     
         controls.setAttribute("visibility", "visible");
         alert(document.querySelector(".height").value);
-        var matrixHeight = Number(document.querySelector(".height").value);
-        var matrixWidth = Number(document.querySelector(".width").value);
+        var matrixHeight = parseInt(document.querySelector(".height").value);
+        var matrixWidth = parseInt(document.querySelector(".width").value);
 
         matrixContainer.appendChild((createMatrix(matrixHeight, matrixWidth)));
         alert(`Created ${matrixWidth} by ${matrixHeight} matrix`);
