@@ -10,6 +10,7 @@ function createMatrix(height, width) {
         for (var o = 0; o < width; o++) {
             var column = document.createElement("div");
             column.classList = `spot, ${i}-${o}`;   //example: "spot, 5-2"
+            column.textContent=`${i}-${o}`;
             row.appendChild(column);
         }
         row.classList = "row";
