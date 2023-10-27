@@ -47,7 +47,7 @@ createMatrixButton.addEventListener("click", ()=>{
     matrix.innerHTML=createMatrix(matrixHeight,matrixWidth);
     alert(`Created ${matrixWidth} by ${matrixHeight} matrix`);
     document.querySelector(".start").setAttribute("display", "none");
-})
+});
 
 controls.appendChild(rotate90Button);
 controls.appendChild(rotate90ButtonCCW);
