@@ -21,13 +21,13 @@ function createMatrix(height, width){
     return result;
 }
 
-function rotate90(){
+// function rotate90(){
 
-}
+// }
 
-function rotate90ccw(){
+// function rotate90ccw(){
 
-}
+// }
 function main(){
 var rotate90Button=document.querySelector("rotate90cc");
 rotate90Button.innerHTML="rotate clockwise";
@@ -43,10 +43,10 @@ var createMatrixButton=document.querySelector(".submit");
 alert("script ran 2");
 
 createMatrixButton.addEventListener("click", ()=>{
-    alert();
+    alert("clicked");
     controls.setAttribute("display", "inital");
-    var matrixHeight=Number(document.querySelector(".height").textContent);
-    var matrixWidth=Number(document.querySelector(".width").textContent);
+    var matrixHeight=parseInt(document.querySelector(".height").textContent);
+    var matrixWidth=parseInt(document.querySelector(".width").textContent);
 
     matrix.innerHTML=createMatrix(matrixHeight,matrixWidth);
     alert(`Created ${matrixWidth} by ${matrixHeight} matrix`);
