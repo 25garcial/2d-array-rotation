@@ -3,10 +3,6 @@ var controls = document.querySelector(".controls");
 var matrix = document.querySelector(".matrix");
 
 
-function randomNum(maxInt) {
-    return Math.floor(Math.random() * maxInt);
-}
-
 function createMatrix(height, width) {
     var result = "";
     for (var i = 0; i < height; i++) {
@@ -22,6 +18,8 @@ function createMatrix(height, width) {
     return result;
 }
 
+alert("script ran 2");
+
 // function rotate90(){
 
 // }
@@ -30,18 +28,16 @@ function createMatrix(height, width) {
 
 // }
 
-alert("script ran 2");
-
 function main() {
 
     alert("script ran 4");
 
     var rotate90Button = document.querySelector(".rotate90cc");
-    rotate90Button.innerHTML = "rotate clockwise";
+    rotate90Button.textContent = "rotate clockwise";
    //rotate90Button.addEventListener("click");
 
     var rotate90ButtonCCW = document.querySelector(".rotate90ccw");
-    rotate90ButtonCCW.innerHTML = "rotate counter clockwise";
+    rotate90ButtonCCW.textContent = "rotate counter clockwise";
     //rotate90ButtonCCW.addEventListener("click");
 
 
