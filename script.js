@@ -36,13 +36,13 @@ function main() {
 
     alert("script ran 4");
 
-    var rotate90Button = document.querySelector("rotate90cc");
+    var rotate90Button = document.querySelector(".rotate90cc");
     rotate90Button.innerHTML = "rotate clockwise";
-    rotate90Button.addEventListener("click");
+   //rotate90Button.addEventListener("click");
 
-    var rotate90ButtonCCW = document.querySelector("rotate90ccw");
+    var rotate90ButtonCCW = document.querySelector(".rotate90ccw");
     rotate90ButtonCCW.innerHTML = "rotate counter clockwise";
-    rotate90ButtonCCW.addEventListener("click");
+    //rotate90ButtonCCW.addEventListener("click");
 
 
     alert("script ran 5");
@@ -62,8 +62,6 @@ function main() {
 
         alert("script ran 7");
     });
-    controls.appendChild(rotate90Button);
-    controls.appendChild(rotate90ButtonCCW);
 
     alert("script ran 6");
 }
