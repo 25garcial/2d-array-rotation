@@ -47,11 +47,11 @@ function main() {
     createMatrixButton.addEventListener("click", () => {
     
         controls.setAttribute("visibility", "visible");
-        alert(document.querySelector(".height").textContent);
+        alert(document.querySelector(".height").value);
         var matrixHeight = Number(document.querySelector(".height").value);
         var matrixWidth = Number(document.querySelector(".width").value);
 
-        matrixContainer.appendChild(createMatrix(matrixHeight, matrixWidth));
+        matrixContainer.appendChild((createMatrix(matrixHeight, matrixWidth)));
         alert(`Created ${matrixWidth} by ${matrixHeight} matrix`);
         document.querySelector(".start").setAttribute("visibility", "hidden");
 
