@@ -1,5 +1,6 @@
 var controls=document.querySelector(".controls");
 var matrix=document.querySelector(".matrix");
+alert("script ran");
 
 function randomNum(maxInt){
     return Math.floor(Math.random()*maxInt);
@@ -38,6 +39,9 @@ rotate90ButtonCCW.addEventListener("click");
 
 
 var createMatrixButton=document.querySelector(".submit");
+
+alert("script ran 2");
+
 createMatrixButton.addEventListener("click", ()=>{
     alert();
     controls.setAttribute("display", "inital");
@@ -48,9 +52,10 @@ createMatrixButton.addEventListener("click", ()=>{
     alert(`Created ${matrixWidth} by ${matrixHeight} matrix`);
     document.querySelector(".start").setAttribute("display", "none");
 });
-
+alert("script ran 3");
 controls.appendChild(rotate90Button);
 controls.appendChild(rotate90ButtonCCW);
 }
-
+alert("script ran 4");
 main();
+alert("script ran 5");
