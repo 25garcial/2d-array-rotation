@@ -1,10 +1,10 @@
 alert("script ran");
 var controls = document.querySelector(".controls");
-var matrix = document.querySelector(".matrix");
+var matrixContainer = document.querySelector(".matrixContainer");
 
 
 function createMatrix(height, width) {
-    var result = "";
+    var result = document.createElement("div");
     for (var i = 0; i < height; i++) {
         var row = document.createElement("div");
         for (var o = 0; o < width; o++) {
@@ -13,7 +13,7 @@ function createMatrix(height, width) {
             row.appendChild(column);
         }
         row.classList = "row";
-        result += row.toString();
+        result.appendChild(row);
     }
     return result;
 }
@@ -51,7 +51,7 @@ function main() {
         var matrixHeight = Number(document.querySelector(".height").value);
         var matrixWidth = Number(document.querySelector(".width").value);
 
-        matrix.innerHTML = createMatrix(matrixHeight, matrixWidth);
+        matrixContainer.appendChild(createMatrix(matrixHeight, matrixWidth));
         alert(`Created ${matrixWidth} by ${matrixHeight} matrix`);
         document.querySelector(".start").setAttribute("visibility", "hidden");
 
