@@ -1,6 +1,7 @@
+alert("script ran");
 var controls=document.querySelector(".controls");
 var matrix=document.querySelector(".matrix");
-alert("script ran");
+
 
 function randomNum(maxInt){
     return Math.floor(Math.random()*maxInt);
