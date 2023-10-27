@@ -2,8 +2,14 @@
     visibility: hidden;
 }
 body{
-    background: "#F5F5DC";
+    background-color: #F5F5DC;
 }
 textarea{
     resize: none;
+}
+.matrixContainer{
+    display:grid;
+}
+.spot{
+    background-color: #ff4f00;
 }

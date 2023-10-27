@@ -9,7 +9,7 @@ function createMatrix(height, width) {
         var row = document.createElement("div");
         for (var o = 0; o < width; o++) {
             var column = document.createElement("div");
-            column.classList = `column, ${i}-${o}`;   //example: "column, 5-2"
+            column.classList = `spot, ${i}-${o}`;   //example: "spot, 5-2"
             row.appendChild(column);
         }
         row.classList = "row";
@@ -53,7 +53,7 @@ function main() {
 
         matrixContainer.appendChild((createMatrix(matrixHeight, matrixWidth)));
         alert(`Created ${matrixWidth} by ${matrixHeight} matrix`);
-        document.querySelector(".start").setAttribute("visibility", "hidden");
+        document.querySelector(".start").remove();
 
     });
 }
