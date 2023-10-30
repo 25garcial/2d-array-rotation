@@ -50,7 +50,7 @@ function main() {
         var matrixHTML=matrix[0];
         matrixHTML.classList="matrixContainer"
         matrixData=matrix[1];
-        matrixData.style[`grid-template-columns: repeat(${matrixHeight}, 50px)`];
+        matrixData.style[`grid-template-columns`]=`repeat(${matrixHeight}, 50px)`;
         document.body.appendChild(matrixHTML);
         alert(`Created ${matrixWidth} by ${matrixHeight} matrix`);
         document.querySelector(".start").remove();
