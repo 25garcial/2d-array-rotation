@@ -1,22 +1,20 @@
-alert("script ran");
 var controls = document.querySelector(".controls");
-var matrixContainer = document.querySelector(".matrixContainer");
-
+var matrixData;
 
 function createMatrix(height, width) {
+    var matrix=[];
     var result = document.createElement("div");
     for (var i = 0; i < height; i++) {
-        var row = document.createElement("div");
+        matrix.push([]);
         for (var o = 0; o < width; o++) {
+            matrix[i].push(`${i}-${o}`);
             var column = document.createElement("div");
             column.classList = `spot, ${i}-${o}`;   //example: "spot, 5-2"
             column.textContent=`${i}-${o}`;
-            row.appendChild(column);
+            result.appendChild(column);
         }
-        row.classList = "row";
-        result.appendChild(row);
     }
-    return result;
+    return [result, matrix];
 }
 
 
@@ -27,7 +25,9 @@ function createMatrix(height, width) {
 // function rotate90ccw(){
 
 // }
+function updateHTML(data){
 
+}
 function main() {
 
 
@@ -39,24 +39,24 @@ function main() {
     rotate90ButtonCCW.textContent = "rotate counter clockwise";
     //rotate90ButtonCCW.addEventListener("click");
 
-
-    
-
     var createMatrixButton = document.querySelector(".submit");
-
-
     createMatrixButton.addEventListener("click", () => {
     
         controls.setAttribute("visibility", "visible");
-        alert(document.querySelector(".height").value);
         var matrixHeight = parseInt(document.querySelector(".height").value);
         var matrixWidth = parseInt(document.querySelector(".width").value);
 
-        matrixContainer.appendChild((createMatrix(matrixHeight, matrixWidth)));
+        var matrix=createMatrix(matrixHeight, matrixWidth);
+        var matrixHTML=matrix[0];
+        matrixHTML.classList="matrixContainer"
+        matrixData=matrix[1];
+        matrixData.style[`grid-template-columns: repeat(${matrixHeight}, 50px)`];
+        document.body.appendChild(matrixHTML);
         alert(`Created ${matrixWidth} by ${matrixHeight} matrix`);
         document.querySelector(".start").remove();
 
     });
+
 }
 
 main();
