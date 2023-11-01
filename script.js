@@ -25,9 +25,9 @@ function createMatrix(height, width) {
 // function rotate90ccw(){
 
 // }
-function updateHTML(data){
+// function updateHTML(data){
 
-}
+// }
 function main() {
 
 
@@ -48,13 +48,12 @@ function main() {
 
         var matrix=createMatrix(matrixHeight, matrixWidth);
         var matrixHTML=matrix[0];
-        matrixHTML.classList="matrixContainer"
+        matrixHTML.classList="matrixContainer";
         matrixData=matrix[1];
         matrixHTML.style.gridTemplateColumns = "50px, ".repeat(matrixHeight);
         document.body.appendChild(matrixHTML);
-        alert(`Created ${matrixWidth} by ${matrixHeight} matrix`);
         document.querySelector(".start").remove();
-
+        alert(`Created ${matrixWidth} by ${matrixHeight} matrix`);
     });
 
 }
