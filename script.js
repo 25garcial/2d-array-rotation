@@ -4,6 +4,7 @@ var matrixData;
 function createMatrix(height, width) {
     var matrix=[];
     var result = document.createElement("div");
+    result.classList.add("matrixContainer");
     for (var i = 0; i < height; i++) {
         matrix.push([]);
         for (var o = 0; o < width; o++) {
@@ -16,11 +17,11 @@ function createMatrix(height, width) {
         }
         alert(spot.classList);
     }
-    alert(result);
-    alert(result.classList);
 
-    result.style.gridTemplateColumns=`repeat(50px, ${height})`;
-    result.style.gridTemplateRows=`repeat(50px, ${height})`;
+    result.style.gridTemplateColumns=`repeat('50px ' ${height})`;
+    result.style.gridTemplateRows=`repeat('50px ' ${height})`;
+
+    alert(result.classList);
     alert(result.style.gridTemplateColumns);
     return [result, matrix];
 }
