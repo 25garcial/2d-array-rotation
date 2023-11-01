@@ -7,13 +7,19 @@ function createMatrix(height, width) {
     for (var i = 0; i < height; i++) {
         matrix.push([]);
         for (var o = 0; o < width; o++) {
-            matrix[i].push(`${i}-${o}`);
-            var column = document.createElement("div");
-            column.classList = `spot, ${i}-${o}`;   //example: "spot, 5-2"
-            column.textContent=`${i}-${o}`;
-            result.appendChild(column);
+            matrix[i].push([i,o]);
+            var spot = document.createElement("div");
+            spot.classList = `spot, ${i}-${o}`;   //example: "spot, 5-2"
+            
+            
+            spot.textContent=`${i}-${o}`;
+            result.appendChild(spot);
         }
+        alert(spot.classList);
     }
+    alert(result);
+    alert(result.classList);
+    alert(result.style.gridTemplateColumns);
     return [result, matrix];
 }
 
