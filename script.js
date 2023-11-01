@@ -18,7 +18,7 @@ function createMatrix(height, width) {
     }
 
     result.style.gridTemplateColumns="50px ".repeat(height);
-    result.style.gridTemplateRows="50px ".repeat(height)`;
+    result.style.gridTemplateRows="50px ".repeat(height);
 
     alert(result.classList);
     alert(result.style.gridTemplateColumns);
