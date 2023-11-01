@@ -4,6 +4,7 @@ var matrixData;
 function createMatrix(height, width) {
     var matrix=[];
     var result = document.createElement("div");
+    result.style.gridTemplateColumns="50px, ".repeat(height);
     for (var i = 0; i < height; i++) {
         matrix.push([]);
         for (var o = 0; o < width; o++) {
