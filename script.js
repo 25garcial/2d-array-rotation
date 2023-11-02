@@ -1,6 +1,12 @@
 var matrixHTML;
 var matrixData;
-
+function cloneGrid(grid) {
+  // Clone the 1st dimension (column)
+  const newGrid = [...grid];
+  // Clone each row
+  newGrid.forEach((row, rowIndex) => newGrid[rowIndex] = [...row]);
+  return newGrid;
+}
 function createMatrix(height, width) {
     var matrix = [];
     var result = document.createElement("div");
@@ -12,7 +18,6 @@ function createMatrix(height, width) {
             var spot = document.createElement("div");
             spot.classList.add("spot");
             spot.classList.add(`${i}-${o}`);   //example: "spot, 5-2"
-            alert(`${Math.floor(0.45 * Math.floor(800 / height))}px`);
             spot.style.fontSize = `${0.4 * Math.floor(800 / height)}px`;
             spot.textContent = `${i}-${o}`;
             result.appendChild(spot);
@@ -27,19 +32,20 @@ function createMatrix(height, width) {
 
 
 function rotate90(matrix) {
-    var result = JSON.decode(JSON.encode(matrix));
-
+    var result = cloneGrid(matrix);
     for (var i = 0; i < matrix.length; i++) {
         for (var o = 0; o <matrix[i].length; o++) {
-            result[matrix[i].length - o][matrix.length - i] = matrix[i][o];
+    
+            result[matrix[i].length - o-1][matrix.length - i-1] = matrix[i][o];
+            
         }
+           
     }
     return result;
 }
 
 function rotate90ccw(matrix){
-    var result = JSON.decode(JSON.encode(matrix));
-    alert(result);
+    var result = cloneGrid(matrix);
     for (var i = matrix.length; i > 0; i--) {
         for (var o = matrix.length; o > 0; o--) {
             result[matrix[i].length - o][matrix.length - i] = matrix[i][o];
@@ -51,7 +57,7 @@ function updateHTML(data) {
     var count = 0;
     for (var i = 0; i < data.length; i++) {
         for (var o = 0; o < data[i].length; o++) {
-            matrixHTML[count].textContent = data[i][o];
+            matrixHTML[count].textContent = String(data[i][o]);
             count++;
         }
     }
