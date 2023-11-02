@@ -11,6 +11,7 @@ function createMatrix(height, width) {
             matrix[i].push([i,o]);
             var spot = document.createElement("div");
             spot.classList.add("spot");
+            var text=document.createElement("span");
             spot.classList.add(`${i}-${o}`);   //example: "spot, 5-2"
             
             spot.textContent=`${i}-${o}`;
@@ -18,10 +19,9 @@ function createMatrix(height, width) {
         }
     }
 
-    result.style.gridTemplateColumns="50px ".repeat(height);
-    result.style.gridTemplateRows="50px ".repeat(height);
+    result.style.gridTemplateColumns=`${Math.floor(800/height)}px `.repeat(height);
+    result.style.gridTemplateRows=`${Math.floor(800/width)}px `.repeat(width);
 
-    alert(spot.classList);
     return [result, matrix];
 }
 
@@ -61,10 +61,9 @@ function main() {
         matrixHTML.style.gridTemplateColumns = "50px, ".repeat(matrixHeight);
         document.body.appendChild(matrixHTML);
         document.querySelector(".start").remove();
-        alert(`Created ${matrixWidth} by ${matrixHeight} matrix`);
+       // alert(`Created ${matrixWidth} by ${matrixHeight} matrix`);
     });
 
 }
 
 main();
-alert("script finished");
