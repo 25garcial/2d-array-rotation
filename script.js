@@ -11,7 +11,6 @@ function createMatrix(height, width) {
             matrix[i].push([i, o]);
             var spot = document.createElement("div");
             spot.classList.add("spot");
-            var text = document.createElement("span");
             spot.classList.add(`${i}-${o}`);   //example: "spot, 5-2"
             alert(`${Math.floor(0.45 * Math.floor(800 / height))}px`);
             spot.style.fontSize = `${0.6 * Math.floor(800 / height)}px`;
@@ -38,7 +37,7 @@ function rotate90(matrix) {
     return result;
 }
 
-function rotate90ccw() {
+function rotate90ccw(matrix){
     var result = JSON.decode(JSON.encode(matrix));
 
     for (var i = matrix.length; i > 0; i--) {
@@ -56,7 +55,6 @@ function updateHTML(data) {
             count++;
         }
     }
-    return;
 }
 
 function main() {
