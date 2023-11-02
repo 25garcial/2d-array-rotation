@@ -1,4 +1,4 @@
-var controls = document.querySelector(".controls");
+
 var matrixData;
 
 function createMatrix(height, width) {
@@ -27,26 +27,50 @@ function createMatrix(height, width) {
 }
 
 
-// function rotate90(){
+ function rotate90(matrix){
+var result=JSON.decode(JSON.encode(matrix));
 
-// }
+    for (var i=0; i<matrix.length; i++){
+        for (var o=0; o<matrix[i].length; 0++){
+            result[matrix[i].length-o][matrix.length-i]=matrix[i][o];
+        }
+    }
+    return result;
+ }
 
-// function rotate90ccw(){
+ function rotate90ccw(){
+    var result=JSON.decode(JSON.encode(matrix));
 
-// }
-// function updateHTML(data){
+    for (var i=matrix.length; i>0; i--){
+        for (var o=matrix.length; o>0; o--){
+            result[matrix[i].length-o][matrix.length-i]=matrix[i][o];
+        }
+    }
+    return result;
+}
+ function updateHTML(data){
 
-// }
+ }
+
 function main() {
+    var controls = document.createElement("div");
+    controls.classList.add("controls");
 
-
-    var rotate90Button = document.querySelector(".rotate90cc");
+    var rotate90Button = document.createElement("button");
+    controls.appendChild(rotate90Button);
     rotate90Button.textContent = "rotate clockwise";
-   //rotate90Button.addEventListener("click");
+   rotate90Button.addEventListener("click", () => {
+    matrixData=rotate90(matrixData);
+    updateHTML(matrixData);
+   });
 
-    var rotate90ButtonCCW = document.querySelector(".rotate90ccw");
+    var rotate90ButtonCCW =  document.createElement("button");
     rotate90ButtonCCW.textContent = "rotate counter clockwise";
-    //rotate90ButtonCCW.addEventListener("click");
+    controls.appendChild(rotate90ButtonCCW);
+    rotate90ButtonCCW.addEventListener("click", () => {
+    matrixData=rotate90ccw(matrixData);
+    updateHTML(matrixData);
+   });
 
     var createMatrixButton = document.querySelector(".submit");
     createMatrixButton.addEventListener("click", () => {
@@ -60,9 +84,11 @@ function main() {
         matrixHTML.classList="matrixContainer";
         matrixData=matrix[1];
         matrixHTML.style.gridTemplateColumns = "50px, ".repeat(matrixHeight);
+        document.body.appendChild(controls);
         document.body.appendChild(matrixHTML);
         document.querySelector(".start").remove();
        // alert(`Created ${matrixWidth} by ${matrixHeight} matrix`);
+       
     });
 
 }
