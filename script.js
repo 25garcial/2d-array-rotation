@@ -57,7 +57,7 @@ function updateHTML(data) {
     var count = 0;
     for (var i = 0; i < data.length; i++) {
         for (var o = 0; o < data[i].length; o++) {
-            matrixHTML[count].textContent = String(data[i][o]);
+            matrixHTML.children[count].textContent = String(data[i][o]);
             count++;
         }
     }
