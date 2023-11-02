@@ -1,4 +1,4 @@
-
+var matrixHTML;
 var matrixData;
 
 function createMatrix(height, width) {
@@ -48,9 +48,11 @@ var result=JSON.decode(JSON.encode(matrix));
     }
     return result;
 }
- function updateHTML(data){
+//  function updateHTML(data){
+//     for (){
 
- }
+//     }
+//  }
 
 function main() {
     var controls = document.createElement("div");
@@ -80,7 +82,7 @@ function main() {
         var matrixWidth = parseInt(document.querySelector(".width").value);
 
         var matrix=createMatrix(matrixHeight, matrixWidth);
-        var matrixHTML=matrix[0];
+        matrixHTML=matrix[0];
         matrixHTML.classList="matrixContainer";
         matrixData=matrix[1];
         matrixHTML.style.gridTemplateColumns = "50px, ".repeat(matrixHeight);
