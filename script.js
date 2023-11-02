@@ -48,11 +48,16 @@ var result=JSON.decode(JSON.encode(matrix));
     }
     return result;
 }
-//  function updateHTML(data){
-//     for (){
-
-//     }
-//  }
+ function updateHTML(data){
+    var count=0;
+    for (var i=0; i<data.length; i++){
+        for (var o=0; o<data[i].length; o++){
+            matrixHTML[count].textContent=data[i][o];
+            count++;
+        }
+    }
+    return;
+ }
 
 function main() {
     var controls = document.createElement("div");
