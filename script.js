@@ -79,7 +79,7 @@ function main() {
 
     var createMatrixButton = document.querySelector(".submit");
     createMatrixButton.addEventListener("click", () => {
-        controls.setAttribute("visibility", "visible");
+        controls.style.visibility = "visible";
         var matrixHeight = parseInt(document.querySelector(".height").value);
         var matrixWidth = parseInt(document.querySelector(".width").value);
 
