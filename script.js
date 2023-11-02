@@ -13,7 +13,7 @@ function createMatrix(height, width) {
             spot.classList.add("spot");
             var text=document.createElement("span");
             spot.classList.add(`${i}-${o}`);   //example: "spot, 5-2"
-            spot.style.fontSize=`${0.6*Math.floor(800/height)}`;
+            spot.style.fontSize=`${0.6*Math.floor(800/height)}px`;
             spot.textContent=`${i}-${o}`;
             result.appendChild(spot);
         }
