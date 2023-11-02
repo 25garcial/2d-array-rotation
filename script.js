@@ -30,7 +30,7 @@ function rotate90(matrix) {
     var result = JSON.decode(JSON.encode(matrix));
 
     for (var i = 0; i < matrix.length; i++) {
-        for (var o = 0; o < matrix[i].length; 0++) {
+        for (var o = 0; o <matrix[i].length; o++) {
             result[matrix[i].length - o][matrix.length - i] = matrix[i][o];
         }
     }
@@ -39,7 +39,7 @@ function rotate90(matrix) {
 
 function rotate90ccw(matrix){
     var result = JSON.decode(JSON.encode(matrix));
-
+    alert(result);
     for (var i = matrix.length; i > 0; i--) {
         for (var o = matrix.length; o > 0; o--) {
             result[matrix[i].length - o][matrix.length - i] = matrix[i][o];
