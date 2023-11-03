@@ -59,9 +59,10 @@ function rotate90(matrix) {
 
 function rotate90ccw(matrix){
     var result = cloneGrid(matrix);
-    for (var i = matrix.length; i > 0; i--) {
-        for (var o = matrix.length; o > 0; o--) {
-            result[matrix[i].length - o][matrix.length - i] = matrix[i][o];
+    for (var i = 0; i < matrix.length; i++) {
+        for (var o = 0; o <matrix[i].length; o++) {
+           
+                result[matrix.length-1-i][o] = matrix[o][i];
         }
     }
     return result;
