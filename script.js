@@ -7,6 +7,7 @@ function cloneGrid(grid) {
   newGrid.forEach((row, rowIndex) => newGrid[rowIndex] = [...row]);
   return newGrid;
 }
+
 function createMatrix(height, width) {
     var matrix = [];
     var result = document.createElement("div");
@@ -30,7 +31,7 @@ function createMatrix(height, width) {
     return [result, matrix];
 }
 
-function defineMatrixQuadrants(matrix){
+/* function defineMatrixQuadrants(matrix){
     if (matrix.length%2==0){
         var q1=[0,matrix.length/2-1];
         var q2=[matrix.length-matrix.length/2-1,matrix.length];
@@ -41,14 +42,14 @@ function defineMatrixQuadrants(matrix){
     }
     console.log(q1, q2);
 }
-
+ */
 function rotate90(matrix) {
 
     var result = cloneGrid(matrix);
     for (var i = 0; i < matrix.length; i++) {
         for (var o = 0; o <matrix[i].length; o++) {
-            defineMatrixQuadrants(matrix);
-                result[matrix[i].length - o-1][matrix.length - i-1] = matrix[i][o];
+           // defineMatrixQuadrants(matrix);
+                result[i][matrix.length-1-o] = matrix[o][i];
             
         }
            
