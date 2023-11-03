@@ -9,13 +9,10 @@ textarea{
 }
 
 .matrixContainer{
-    
-    left: 15%;
-    right: 15%;
-    bottom: 5%;
+    width:fit-content;
+    height: fit-content;
+    left: 5%;
     top: 5%;
-    max-height: 100%;
-    max-width: 100%;
     display: grid;
     background-color: black;
     border-style: solid;
@@ -27,4 +24,5 @@ textarea{
    align-items: center;
    border-style: solid;
    border-width: 2px;
+   min-width: vmax;
 }
