@@ -14,29 +14,41 @@ function createMatrix(height, width) {
     for (var i = 0; i < height; i++) {
         matrix.push([]);
         for (var o = 0; o < width; o++) {
-            matrix[i].push([i, o]);
+            matrix[i].push([i+1, o+1]);
             var spot = document.createElement("div");
             spot.classList.add("spot");
             spot.classList.add(`${i}-${o}`);   //example: "spot, 5-2"
-            spot.style.fontSize = `${0.4 * Math.floor(800 / height)}px`;
-            spot.textContent = `${i}-${o}`;
+         //   spot.style.fontSize = `${Math.floor(800 / Math.max(height, width))*8}%`;
+            spot.textContent = `${i+1}-${o+1}`;
             result.appendChild(spot);
         }
     }
 
-    result.style.gridTemplateColumns = `${Math.floor(800 / height)}px `.repeat(height);
-    result.style.gridTemplateRows = `${Math.floor(800 / width)}px `.repeat(width);
+    result.style.gridTemplateColumns = `${Math.floor(height)*5}px `.repeat(height);
+    result.style.gridTemplateRows = `${Math.floor(width)*5}px `.repeat(width);
 
     return [result, matrix];
 }
 
+function defineMatrixQuadrants(matrix){
+    if (matrix.length%2==0){
+        var q1=[0,matrix.length/2-1];
+        var q2=[matrix.length-matrix.length/2-1,matrix.length];
+    } else{
+        var q1=[0,Math.floor(matrix.length/2)];
+        var q2=[Math.floor(matrix.length/2), matrix.length];
+        var q5 = Math.floor(matrix.length/2);
+    }
+    console.log(q1, q2);
+}
 
 function rotate90(matrix) {
+
     var result = cloneGrid(matrix);
     for (var i = 0; i < matrix.length; i++) {
         for (var o = 0; o <matrix[i].length; o++) {
-    
-            result[matrix[i].length - o-1][matrix.length - i-1] = matrix[i][o];
+            defineMatrixQuadrants(matrix);
+                result[matrix[i].length - o-1][matrix.length - i-1] = matrix[i][o];
             
         }
            
@@ -93,7 +105,6 @@ function main() {
         matrixHTML = matrix[0];
         matrixHTML.classList = "matrixContainer";
         matrixData = matrix[1];
-        matrixHTML.style.gridTemplateColumns = "50px, ".repeat(matrixHeight);
         document.body.appendChild(controls);
         document.body.appendChild(matrixHTML);
         document.querySelector(".start").remove();
