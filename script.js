@@ -14,7 +14,7 @@ function createMatrix(height, width) {
     result.classList += "matrixContainer";
     for (var i = 0; i < height; i++) {
         matrix.push([]);
-        for (var o = 0; o < width; o++) {
+        for (var o = 0; o < height; o++) {
             matrix[i].push([i+1, o+1]);
             var spot = document.createElement("div");
             spot.classList.add("spot");
@@ -26,7 +26,7 @@ function createMatrix(height, width) {
     }
 
     result.style.gridTemplateColumns = `${Math.floor(height)*5}px `.repeat(height);
-    result.style.gridTemplateRows = `${Math.floor(width)*5}px `.repeat(width);
+    result.style.gridTemplateRows = `${Math.floor(height)*5}px `.repeat(height);
 
     return [result, matrix];
 }
@@ -101,7 +101,8 @@ function main() {
     createMatrixButton.addEventListener("click", () => {
         controls.style.visibility = "visible";
         var matrixHeight = parseInt(document.querySelector(".height").value);
-        var matrixWidth = parseInt(document.querySelector(".width").value);
+        //var matrixWidth = parseInt(document.querySelector(".width").value);
+        var matrixWidth = parseInt(document.querySelector(".height").value);
 
         var matrix = createMatrix(matrixHeight, matrixWidth);
         matrixHTML = matrix[0];
