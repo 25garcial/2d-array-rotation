@@ -7,7 +7,7 @@ function cloneGrid(grid) {
   newGrid.forEach((row, rowIndex) => newGrid[rowIndex] = [...row]);
   return newGrid;
 }
-asdfasdf
+
 function createMatrix(height, width) {
     var matrix = [];
     var result = document.createElement("div");
